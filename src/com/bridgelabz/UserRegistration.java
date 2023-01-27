@@ -105,4 +105,17 @@ public class UserRegistration {
         else
             System.out.println("Password is Invalid");
     }
+    public void validPasswordRule4() {
+        System.out.print("Enter Password : ");
+        String Password4 = scanner.nextLine();
+        String regex = "^(?=.*[A-z])(?=.*[0-9])(?=.*[@#$%^&*()-+=])([a-zA-Z0-9@._-]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(Password4);
+        boolean result = matcher.matches();
+
+        if (result)
+            System.out.println("Password is valid");
+        else
+            System.out.println("Password is Invalid");
+    }
 }
