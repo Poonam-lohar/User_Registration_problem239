@@ -21,6 +21,7 @@ public class UserRegistration {
         else
             System.out.println("First name is Invalid");
     }
+
     public void validLastName() {
         System.out.print("Enter the Last Name : ");
         String name = scanner.next();
@@ -34,7 +35,8 @@ public class UserRegistration {
         else
             System.out.println("Last name is Invalid");
     }
-    public void validEmail(){
+
+    public void validEmail() {
         System.out.print("Enter the Email: ");
         String email = scanner.next();
         String regex = "^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2})*$";
@@ -48,7 +50,7 @@ public class UserRegistration {
             System.out.println("Email is Invalid");
     }
 
-    public void validMobFormat(){
+    public void validMobFormat() {
         System.out.print("Enter Mobile Number : ");
         String mobileNo = scanner.nextLine();
         String regex = "^[0-9]{2}\\s[0-9]{10}$";
@@ -60,5 +62,19 @@ public class UserRegistration {
             System.out.println("Mobile Number is valid");
         else
             System.out.println("Mobile Number is Invalid");
+    }
+
+    public void validPasswordRule1() {
+        System.out.print("Enter Password : ");
+        String Password = scanner.nextLine();
+        String regex = "^[A-Za-z0-9@]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(Password);
+        boolean result = matcher.matches();
+
+        if (result)
+            System.out.println("Password is valid");
+        else
+            System.out.println("Password is Invalid");
     }
 }
