@@ -105,6 +105,7 @@ public class UserRegistration {
         else
             System.out.println("Password is Invalid");
     }
+
     public void validPasswordRule4() {
         System.out.print("Enter Password : ");
         String Password4 = scanner.nextLine();
@@ -118,4 +119,20 @@ public class UserRegistration {
         else
             System.out.println("Password is Invalid");
     }
+
+    public void validEmailSamples() {
+
+        System.out.print("Enter Email Sample : ");
+        String emailSample = scanner.nextLine();
+        String regex = "^(?!.*@.*@)[a-z+_-]+(.[a-z0-9])*@[a-z0-9]+(.[a-z])*.[a-z]{2,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(emailSample);
+        boolean result = matcher.matches();
+
+        if (result)
+            System.out.println("Email sample is valid");
+        else
+            System.out.println("Email sample is invalid");
+    }
+
 }
