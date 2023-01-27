@@ -11,7 +11,7 @@ public class UserRegistrationMain {
         while (flag) {
             Scanner sc = new Scanner(System.in);
             UserRegistration userRegistration = new UserRegistration();
-            System.out.println("\n1.Valid FirstName \n2.Valid lastName \n3.Exit ");
+            System.out.println("\n1.Valid FirstName \n2.Valid lastName \n3.Valid Email \n4.Exit ");
             System.out.println("Enter choice: ");
             int choice = sc.nextInt();
             switch (choice) {
@@ -22,6 +22,9 @@ public class UserRegistrationMain {
                     userRegistration.validLastName();
                     break;
                 case 3:
+                    userRegistration.validEmail();
+                    break;
+                case 4:
                     flag = false;
                     System.out.println("Exited Successfully.......");
                     break;
